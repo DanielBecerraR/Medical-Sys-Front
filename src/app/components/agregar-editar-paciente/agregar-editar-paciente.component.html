@@ -1,0 +1,66 @@
+<div class="title">
+    <h1>{{ operacion }} Paciente</h1>
+</div>
+<app-spinner *ngIf="loading"></app-spinner>
+<div class="container">
+    <mat-card class="card">
+
+        <mat-card-subtitle>
+            Datos del Paciente
+        </mat-card-subtitle>
+
+        <form [formGroup]="form" (ngSubmit)="agregarEditarPaciente()">
+            <mat-grid-list cols="3" rowHeight="100px">
+
+                <mat-grid-tile >
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nombres</mat-label>
+                        <input formControlName="nombres" matInput autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile >
+                    <mat-form-field appearance="outline">
+                        <mat-label>Apellidos</mat-label>
+                        <input formControlName="apellidos" matInput autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile >
+                    <mat-form-field appearance="outline">
+                        <mat-label>Tipo documento</mat-label>
+                        <input formControlName="tipoDocumento" matInput autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile >
+                    <mat-form-field appearance="outline">
+                        <mat-label>Numero documento</mat-label>
+                        <input formControlName="numeroDocumento" matInput autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile >
+                    <mat-form-field appearance="outline">
+                        <mat-label>Fecha nacimiento</mat-label>
+                        <input formControlName="fechaNacimiento" matInput autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile >
+                    <mat-form-field appearance="outline">
+                        <mat-label>Ciudad recidencia</mat-label>
+                        <input formControlName="ciudadRecidencia" matInput autocomplete="off">
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile [colspan]="2">
+                    <button [disabled]="form.invalid" type="submit" class="btnAceptar" mat-raised-button color="primary">Aceptar</button>
+                    <button mat-raised-button routerLink="/listaPacientes">Volver</button>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+        </form>
+
+    </mat-card>
+</div>
